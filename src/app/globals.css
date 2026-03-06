@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f5f0; /* Changed to your beige color */
+  --foreground: #171717;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Custom beige colors */
+  --color-beige-50: #f8f5f0;
+  --color-beige-100: #f0ebe5;
+  --color-beige-200: #e8e0d5;
+  
+  /* Custom gray colors for better contrast on beige */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Custom classes for beige background */
+.bg-beige-50 {
+  background-color: var(--color-beige-50);
+}
+
+/* Better text contrast on beige */
+.text-gray-900 {
+  color: var(--color-gray-900);
+}
+
+.text-gray-800 {
+  color: var(--color-gray-800);
+}
+
+.text-gray-700 {
+  color: var(--color-gray-700);
+}
+
+.text-gray-600 {
+  color: var(--color-gray-600);
+}
+
+.text-gray-500 {
+  color: var(--color-gray-500);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Remove focus outlines for mouse users */
+*:focus:not(:focus-visible) {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Custom focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-gray-900);
+  outline-offset: 2px;
+  border-radius: 0.125rem;
+}
+
+/* Better selection colors */
+::selection {
+  background-color: rgba(31, 41, 55, 0.2); /* gray-800 with opacity */
+  color: var(--color-gray-900);
+}
+
+/* Input styling for better contrast */
+input, textarea, select {
+  color: var(--color-gray-900);
+  background-color: white;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Button hover states */
+button:hover {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Card shadows for better depth */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
